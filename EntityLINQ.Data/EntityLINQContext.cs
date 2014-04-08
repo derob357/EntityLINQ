@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
+using System.Data.Entity;
 
 namespace EntityLINQ.Data
 {
@@ -24,5 +25,10 @@ namespace EntityLINQ.Data
             : base("DefaultConnection")
         {
         }
+
+        public DbSet<Customer> Customers { get; set; }
+        public DbSet<Order> Orders { get; set; }
+
+
     }
 }
